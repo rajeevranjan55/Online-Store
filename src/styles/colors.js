@@ -1,0 +1,21 @@
+export default {
+    themecolor: "Blue",
+    white: "white",
+    red: "red",
+    green: "green",
+    wheat: "wheat",
+    yellow: "yellow",
+    orange: "orange ",
+    brown: "brown",
+    salmon: "salmon",
+    steelblue: "steelblue",
+    sandybrown: "sandybrown",
+    bisque: "bisque",
+    antiquewhite: "antiquewhite",
+    coral: "coral",
+    grey:"grey",
+    blue:"blue",
+    lightgrey:"lightgrey",
+    black:"black",
+    white:"white"
+    };
