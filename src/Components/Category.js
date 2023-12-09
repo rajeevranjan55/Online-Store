@@ -6,18 +6,15 @@ import {
   responsiveWidth,
 } from "react-native-responsive-dimensions";
 import imagePath from "../constants/imagePath";
-// import strings from "../constants/LocalizationStrings";
+
 import colors from "../styles/colors";
-import { useContext } from "react";
-import { MyContext } from "../utils/Context";
-// import strings from "../constants/strings";
-
-
+import { useSelector } from "react-redux";
 
 const Category = () => {
-  const { langData, setLangData } = useContext(MyContext);
-  console.log(langData.value);
-  const strings = JSON.parse(langData.value);
+  const langData = useSelector((state) => state.lang.arr);
+
+  const strings = langData[0];
+
   const data = [
     {
       image: imagePath.remote,

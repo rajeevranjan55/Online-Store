@@ -1,7 +1,5 @@
 import React from "react";
 import { View, StyleSheet, Text, FlatList, Image } from "react-native";
-import imagePath from "../constants/imagePath";
-// import strings from "../constants/LocalizationStrings";
 
 import {
   responsiveFontSize,
@@ -9,7 +7,6 @@ import {
   responsiveWidth,
 } from "react-native-responsive-dimensions";
 import colors from "../styles/colors";
-import strings from "../constants/strings";
 
 const ViewAll = ({
   viewall,
@@ -20,6 +17,7 @@ const ViewAll = ({
   aedtxt,
   numtxt,
 }) => {
+  
   return (
     <View
       style={{
@@ -36,10 +34,18 @@ const ViewAll = ({
           marginTop: responsiveHeight(2),
         }}
       >
-        <Text style={{ color: colors.black, fontSize: responsiveFontSize(3), fontWeight: "bold" }}>
+        <Text
+          style={{
+            color: colors.black,
+            fontSize: responsiveFontSize(3),
+            fontWeight: "bold",
+          }}
+        >
           {maintext}
         </Text>
-        <Text style={{ color: "#034EA1" ,fontSize:responsiveFontSize(2)}}>{viewAlltxt}</Text>
+        <Text style={{ color: "#034EA1", fontSize: responsiveFontSize(2) }}>
+          {viewAlltxt}
+        </Text>
       </View>
       <FlatList
         showsHorizontalScrollIndicator={false}
@@ -66,70 +72,70 @@ const ViewAll = ({
                 }}
                 source={item.image}
               />
-              <View style={{marginLeft:responsiveWidth(2)}}>
-              <Text
-                numberOfLines={2}
-                style={{
-                  marginLeft: responsiveWidth(1),
-                  width: responsiveWidth(30),
-                  color: colors.grey,
-                  marginTop: responsiveHeight(1),
-                }}
-              >
-                {item.text}
-              </Text>
-              <Text
-                style={{
-                  marginLeft: responsiveWidth(1),
-                  marginTop: responsiveHeight(1),
-                  color: colors.grey,
-                }}
-              >
-                {aedtxt}
+              <View style={{ marginLeft: responsiveWidth(2) }}>
                 <Text
+                  numberOfLines={2}
                   style={{
-                    color: colors.black,
-                    fontSize: responsiveFontSize(2.5),
-                    fontWeight: "bold",
+                    marginLeft: responsiveWidth(1),
+                    width: responsiveWidth(30),
+                    color: colors.grey,
+                    marginTop: responsiveHeight(1),
                   }}
                 >
-                  {numtxt}
+                  {item.text}
                 </Text>
-              </Text>
-              <View
-                style={{
-                  flexDirection: "row",
-                  justifyContent: "space-between",
-                }}
-              >
                 <Text
                   style={{
                     marginLeft: responsiveWidth(1),
-                    textDecorationLine: "line-through",
+                    marginTop: responsiveHeight(1),
                     color: colors.grey,
                   }}
                 >
-                  {txtAED2}
+                  {aedtxt}
+                  <Text
+                    style={{
+                      color: colors.black,
+                      fontSize: responsiveFontSize(2.5),
+                      fontWeight: "bold",
+                    }}
+                  >
+                    {numtxt}
+                  </Text>
                 </Text>
-                <Text
+                <View
                   style={{
-                    fontWeight: "bold",
-                    backgroundColor: colors.yellow,
-                    marginRight: responsiveWidth(1),
+                    flexDirection: "row",
+                    justifyContent: "space-between",
                   }}
                 >
-                  {offtxt}
+                  <Text
+                    style={{
+                      marginLeft: responsiveWidth(1),
+                      textDecorationLine: "line-through",
+                      color: colors.grey,
+                    }}
+                  >
+                    {txtAED2}
+                  </Text>
+                  <Text
+                    style={{
+                      fontWeight: "bold",
+                      backgroundColor: colors.yellow,
+                      marginRight: responsiveWidth(1),
+                    }}
+                  >
+                    {offtxt}
+                  </Text>
+                </View>
+                <Text
+                  style={{
+                    marginLeft: responsiveWidth(1),
+                    color: colors.grey,
+                    marginTop: responsiveHeight(1.5),
+                  }}
+                >
+                  {item.text2}
                 </Text>
-              </View>
-              <Text
-                style={{
-                  marginLeft: responsiveWidth(1),
-                  color: colors.grey,
-                  marginTop: responsiveHeight(1.5),
-                }}
-              >
-                {item.text2}
-              </Text>
               </View>
             </View>
           );

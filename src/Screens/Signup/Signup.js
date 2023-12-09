@@ -1,35 +1,26 @@
-import React, { useContext, useState } from "react";
-import {
-  View,
- 
-  TextInput,
-  Text,
-  ScrollView,
-  Image,
-} from "react-native";
+import React, { useState } from "react";
+import { View, TextInput, Text, ScrollView, Image } from "react-native";
 import Header from "../../Components/Header";
 
 import colors from "../../styles/colors";
 import {
   responsiveHeight,
   responsiveWidth,
-  responsiveFontSize,
 } from "react-native-responsive-dimensions";
 import imagePath from "../../constants/imagePath";
 import Button from "../../Components/Button";
 import LoginOption from "../../Components/LoginOption";
 import navigationString from "../../Navigations/navigationString";
-// import strings from "../../constants/strings";
-import { useDispatch } from "react-redux";
+
+import { useDispatch, useSelector } from "react-redux";
 import { onButtonClick } from "../../Redux/SignupSlice";
 import { styles } from "./styles";
-import { MyContext } from "../../utils/Context";
-// import strings from "../../constants/LocalizationStrings";
 
 const Signup = ({ navigation }) => {
-  const { langData, setLangData } = useContext(MyContext);
-  console.log(langData.value);
-  const strings = JSON.parse(langData.value);
+  const langData = useSelector((state) => state.lang.arr);
+
+  const strings = langData[0];
+
   const dispatch = useDispatch();
   const [wrongPass, setWrongPass] = useState(false);
 
@@ -46,7 +37,6 @@ const Signup = ({ navigation }) => {
 
   const handleInput = (key, value) => {
     setInput({ ...input, [key]: value });
-    // console.log(input);
   };
 
   const handleData = () => {

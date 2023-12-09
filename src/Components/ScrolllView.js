@@ -5,7 +5,6 @@ import {
   responsiveHeight,
   responsiveWidth,
 } from "react-native-responsive-dimensions";
-// import strings from "../constants/strings";
 
 const ScrolllView = () => {
   const data = [
@@ -19,7 +18,6 @@ const ScrolllView = () => {
         data={data}
         horizontal
         showsHorizontalScrollIndicator={false}
-        // pagingEnabled
         renderItem={({ item }) => {
           return (
             <View>

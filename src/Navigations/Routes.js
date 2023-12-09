@@ -1,7 +1,7 @@
 import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
-import React, { Component } from 'react';
-import {View, StyleSheet} from 'react-native';
+import React from 'react';
+import { StyleSheet} from 'react-native';
 import navigationString from './navigationString';
 import * as Screens from "../Screens";
 import BottomTab from './BottomTab';

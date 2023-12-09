@@ -6,31 +6,22 @@ import {
   responsiveWidth,
 } from "react-native-responsive-dimensions";
 import colors from "../styles/colors";
-// import strings from "../constants/strings";
 
 const LoginOption = ({ btnStyle, text, image, txtStyles }) => {
   return (
     <View>
-      {/* <TouchableOpacity style={{ ...styles.TouchOpStyle, ...btnStyle }}>
+      <View style={{ ...styles.ViewStyle, ...btnStyle }}>
+        <Image
+          style={{ height: 20, width: 20, marginLeft: 10 }}
+          source={image}
+        />
         <Text style={{ ...styles.txtStyle, ...txtStyles }}>{text}</Text>
-        <Image
-          style={{ height: 20, width: 20, marginLeft: 10 }}
-          source={image}
-        />
-      </TouchableOpacity> */}
-      <View style={{...styles.ViewStyle,...btnStyle}}>
-        <Image
-          style={{ height: 20, width: 20, marginLeft: 10 }}
-          source={image}
-        />
-        <Text style={{...styles.txtStyle,...txtStyles}}>{text}</Text>
       </View>
     </View>
   );
 };
 
 const styles = StyleSheet.create({
- 
   ViewStyle: {
     backgroundColor: "#3B5998",
     alignItems: "center",
@@ -43,7 +34,7 @@ const styles = StyleSheet.create({
   txtStyle: {
     fontSize: responsiveFontSize(2.3),
     color: colors.black,
-    marginLeft:responsiveWidth(4)
+    marginLeft: responsiveWidth(4),
   },
 });
 

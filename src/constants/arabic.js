@@ -64,5 +64,6 @@ export default {
     signin:"تسجيل الدخول",
     shopbycategory:"تسوق حسب الفئة",
     chooseYourlang:"اختر لغتك",
-    alertText:"الرجاء تأكيد كلمة السر"
+    alertText:"الرجاء تأكيد كلمة السر",
+    chooseYourlang:"Choose Your Language",
 };

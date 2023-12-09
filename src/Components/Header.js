@@ -11,14 +11,12 @@ import {
 const Header = ({ navigation }) => {
   return (
     <View>
-      <TouchableOpacity onPress={()=>navigation.goBack()}>
-      <Image style={styles.headerback} source={imagePath.headerback} />
+      <TouchableOpacity onPress={() => navigation.goBack()}>
+        <Image style={styles.headerback} source={imagePath.headerback} />
       </TouchableOpacity>
       <Image style={styles.headerLogo} source={imagePath.headerLogo} />
 
-      {/* <TouchableOpacity onPress={()=>navigation.goBack()}> */}
-        <Image style={styles.headerBackIc} source={imagePath.headerBackIc} />
-      {/* </TouchableOpacity> */}
+      <Image style={styles.headerBackIc} source={imagePath.headerBackIc} />
     </View>
   );
 };

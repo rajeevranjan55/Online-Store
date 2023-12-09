@@ -1,5 +1,5 @@
 import React from "react";
-import { Image, ScrollView, Text ,View} from "react-native";
+import { Image, ScrollView, Text, View } from "react-native";
 
 import {
   responsiveHeight,
@@ -10,19 +10,19 @@ import imagePath from "../../constants/imagePath";
 import Carousel from "../../Components/Carousel";
 import ScrolllView from "../../Components/ScrolllView";
 import ViewAll from "../../Components/ViewAll";
-// import strings from "../../constants/LocalizationStrings";
+
 import colors from "../../styles/colors";
 import Category from "../../Components/Category";
 import Banner from "../../Components/Banner";
-import strings from "../../constants/strings";
-import { setStatusBarNetworkActivityIndicatorVisible } from "expo-status-bar";
+
 import { styles } from "./styles";
-import { MyContext } from "../../utils/Context";
-import { useContext } from "react";
+
+import { useSelector } from "react-redux";
 const Home = () => {
-  const { langData, setLangData } = useContext(MyContext);
-  console.log(langData.value);
-  const strings = JSON.parse(langData.value);
+  const langData = useSelector((state) => state.lang.arr);
+
+  const strings = langData[0];
+
   const comingSoon2 = [
     { image: imagePath.mxgp, text: strings.mxgp, text2: strings.releasedate },
     {
@@ -43,22 +43,18 @@ const Home = () => {
   return (
     <View style={{ flex: 1, backgroundColor: colors.lightgrey }}>
       <View style={{ backgroundColor: "#034EA1", flex: 0.12 }}>
-        <Image
-          style={styles.headerImgStyle}
-          source={imagePath.headerLogo}
-        />
-        <Image
-          style={styles.searchImgStyle}
-          source={imagePath.search}
-        />
+        <Image style={styles.headerImgStyle} source={imagePath.headerLogo} />
+        <Image style={styles.searchImgStyle} source={imagePath.search} />
         <Image
           style={{
-           ...styles.searchImgStyle,right:30 }}
+            ...styles.searchImgStyle,
+            right: 30,
+          }}
           source={imagePath.cart}
         />
       </View>
       <ScrollView style={{ flex: 0.88 }}>
-        <View >
+        <View>
           <Carousel />
         </View>
         <View>
@@ -73,7 +69,6 @@ const Home = () => {
             offtxt={strings.off}
             aedtxt={strings.aed}
             numtxt={strings.num}
-          
           />
         </View>
         <View
@@ -81,11 +76,7 @@ const Home = () => {
             marginLeft: responsiveWidth(4),
           }}
         >
-          <Text
-            style={styles.shopByCategory}
-          >
-            {strings.shopbycategory}
-          </Text>
+          <Text style={styles.shopByCategory}>{strings.shopbycategory}</Text>
           <Category />
           <Category />
           <Category />
@@ -113,9 +104,7 @@ const Home = () => {
           numtxt={strings.num}
         />
         <Banner bannertxt={strings.pcandlaptop} image={imagePath.pcandlaptop} />
-        <View
-          style={styles.categoryView}
-        >
+        <View style={styles.categoryView}>
           <Category />
           <Category />
         </View>
@@ -138,9 +127,7 @@ const Home = () => {
           image={imagePath.geeknation}
           viewalltxt={strings.viewall}
         />
-        <View
-          style={styles.categoryView}
-        >
+        <View style={styles.categoryView}>
           <Category />
           <Category />
         </View>
@@ -162,7 +149,5 @@ const Home = () => {
     </View>
   );
 };
-
-
 
 export default Home;

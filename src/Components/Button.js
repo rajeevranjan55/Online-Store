@@ -6,13 +6,15 @@ import {
   TouchableOpacity,
   Dimensions,
 } from "react-native";
-// import strings from "../constants/LocalizationStrings";
 
 const { height, width } = Dimensions.get("window");
-const Button = ({ btnStyles, text ,onPress}) => {
+const Button = ({ btnStyles, text, onPress }) => {
   return (
     <View style={{ alignItems: "center", justifyContent: "center" }}>
-      <TouchableOpacity style={{ ...styles.btnStyle, ...btnStyles }} onPress={onPress}>
+      <TouchableOpacity
+        style={{ ...styles.btnStyle, ...btnStyles }}
+        onPress={onPress}
+      >
         <Text style={styles.txtstyle}>{text}</Text>
       </TouchableOpacity>
     </View>

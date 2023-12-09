@@ -9,18 +9,22 @@ import {
 } from "react-native-responsive-dimensions";
 import Button from "../../Components/Button";
 import navigationString from "../../Navigations/navigationString";
-// import strings from "../../constants/strings";
+
 import { useSelector } from "react-redux";
-// import strings from "../../constants/LocalizationStrings";
+
 import { styles } from "./styles";
-import { MyContext } from "../../utils/Context";
+
 const Login = ({ navigation }) => {
-  const { langData, setLangData } = useContext(MyContext);
-  // console.log(langData.value);
-  const strings = JSON.parse(langData.value);
+
   const [show, setshow] = useState(false);
   const store = useSelector((state) => state.signup.arr);
-  console.log(store);
+
+
+
+  const langData=useSelector(state=>state.lang.arr)
+ 
+  
+  const strings = langData[0]
   const [email, setEmail] = useState("");
   const [pass, setPass] = useState("");
  
@@ -36,7 +40,7 @@ const Login = ({ navigation }) => {
         screen: navigationString.Home,
       });
     } else {
-      console.log("wrong email or passward ");
+      console.warn("wrong email or passward ");
     }
   };
 

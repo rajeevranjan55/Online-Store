@@ -11,8 +11,6 @@ import imagePath from "../constants/imagePath";
 const { height, width } = Dimensions.get("window");
 const Carousel = () => {
   const images = [imagePath.hitman, imagePath.wanted, imagePath.troy];
-  //   const WIDTH = Dimensions.get('window').width
-  //   const HEIGHT = Dimensions.get('window').height
 
   const [imgActive, setimgActive] = React.useState(0);
   onchange = (nativeEvent) => {

@@ -11,20 +11,19 @@ import {
 import { responsiveHeight } from "react-native-responsive-dimensions";
 import Header from "../../Components/Header";
 import imagePath from "../../constants/imagePath";
-// import strings from "../../constants/LocalizationStrings";
+
 import colors from "../../styles/colors";
 
 import navigationString from "../../Navigations/navigationString";
-// import strings from "../../constants/strings";
+
 import { styles } from "./styles";
-import { useContext } from "react";
-import { MyContext } from "../../utils/Context";
+
+import { useSelector } from "react-redux";
 
 const Welcome = ({ navigation }) => {
-  const { langData, setLangData } = useContext(MyContext);
-  console.log(langData.value);
-  const strings = JSON.parse(langData.value);
-  console.log(strings, "stringsstrings");
+  const langData = useSelector((state) => state.lang.arr);
+
+  const strings = langData[0];
 
   return (
     <SafeAreaView style={{ flex: 1 }}>
